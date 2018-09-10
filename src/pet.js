@@ -9,11 +9,6 @@ function Unicorn(name, age) {
   this.hunger += 5;
   this.fitness -= 3;
  };
-
- Unicorn.prototype.feed = function() {
-  this.hunger += 5;
- }
-
  const pet = {
   name: 'Jerry'
  };
