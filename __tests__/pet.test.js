@@ -32,3 +32,11 @@ describe('growUp', () => {
  });
 });
 
+describe('walk', () => {
+ it('increases exercise by 4', () => {
+  const pet = new Unicorn('Jerry');
+  pet.fitness = 9;
+  pet.walk();
+  expect(pet.fitness).toEqual(10);
+ });
+});
