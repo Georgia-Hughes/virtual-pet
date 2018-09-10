@@ -14,11 +14,13 @@ function Unicorn(name, age) {
   this.hunger += 5;
  }
 
+ const MAXIMUM_FITNESS = 10;
+
  Unicorn.prototype.walk = function() {
-  if ((this.fitness + 4 ) <= 10){
+  if ((this.fitness + 4 ) <= MAXIMUM_FITNESS){
    this.fitness += 4;
   } else {
-   this.fitness = 10;
+   this.fitness = MAXIMUM_FITNESS;
   }
  }
 
