@@ -20,11 +20,6 @@ describe('growUp', () => {
   pet.growUp();
   expect(pet.age).toEqual(1);
  });
- it('increase the hunger by 5', () => {
-  const pet = new Unicorn('Jerry');
-  pet.feed();
-  expect(pet.hunger).toEqual(5);
- });
  it('decreases fitness by 3', () => {
   const pet = new Unicorn('Jerry');
   pet.growUp();
@@ -38,5 +33,14 @@ describe('walk', () => {
   pet.fitness = 9;
   pet.walk();
   expect(pet.fitness).toEqual(10);
+ });
+});
+
+describe('feed', () => {
+ it('decrease hunger by 3', () => {
+  const pet = new Unicorn('Jerry');
+  pet.hunger = 4;
+  pet.feed();
+  expect(pet.hunger).toEqual(1);
  });
 });

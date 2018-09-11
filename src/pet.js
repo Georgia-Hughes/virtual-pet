@@ -6,12 +6,18 @@ function Unicorn(name, age) {
 
  Unicorn.prototype.growUp = function() {
   this.age += 1;
-  this.hunger += 5;
+  this.hunger += 3;
   this.fitness -= 3;
  };
 
+ const MINIMUM_HUNGER = 0;
+
  Unicorn.prototype.feed = function() {
-  this.hunger += 5;
+  if ((this.hunger - 3) >= MINIMUM_HUNGER){
+   this.hunger -= 3;
+  } else {
+   this.hunger = MINIMUM_HUNGER;
+  }
  }
 
  const MAXIMUM_FITNESS = 10;
@@ -23,6 +29,9 @@ function Unicorn(name, age) {
    this.fitness = MAXIMUM_FITNESS;
   }
  }
+
+
+
 
  const pet = {
   name: 'Jerry'
