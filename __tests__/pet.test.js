@@ -6,19 +6,16 @@ beforeEach(() => {
  pet = new Unicorn('Jerry');
 });
 
-describe('constructor', () => {
- it('returns an object', () => {
+describe('namePet', () => {
+ it('gives the unicorn a name', () => {
   expect(pet.name).toEqual('Jerry');
  });
 });
 
-describe('constructor', () => {
+describe('growUp', () => {
  it('has initial age of 0', () => {
   expect(pet.age).toEqual(0);
  });
-});
-
-describe('growUp', () => {
  it('increase the age by 1', () => {
   pet.growUp();
   expect(pet.age).toEqual(1);
@@ -30,6 +27,9 @@ describe('growUp', () => {
 });
 
 describe('walk', () => {
+ it('has initial fitness of 10', () => {
+  expect(pet.fitness).toEqual(10);
+ });
  it('increases exercise by 4', () => {
   pet.fitness = 9;
   pet.walk();
@@ -38,6 +38,9 @@ describe('walk', () => {
 });
 
 describe('feed', () => {
+ it('initial hunger of 0', () => {
+  expect(pet.hunger).toEqual(0);
+ });
  it('decrease hunger by 3', () => {
   pet.hunger = 4;
   pet.feed();
@@ -45,7 +48,7 @@ describe('feed', () => {
  });
 });
 
-describe('check up', () => {
+describe('checkUp', () => {
  it('checks if my unicorn needs a walk and food', () => {
   pet.fitness = 2;
   pet.hunger = 6;
