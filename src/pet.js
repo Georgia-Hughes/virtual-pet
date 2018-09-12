@@ -43,6 +43,13 @@ function Unicorn(name, age) {
   }
  }
 
+ Unicorn.prototype.isAlive = function() {
+  if (this.fitness <= 0 || this.hunger >= 10 || this.age >= 30) {
+   return false;
+  } else {
+   return true;
+  }
+ }
 
 
  const pet = {

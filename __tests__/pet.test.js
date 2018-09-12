@@ -66,3 +66,24 @@ describe('checkUp', () => {
   expect(pet.checkUp()).toEqual('I feel great!');
  });
 });
+
+describe('isAlive', () => {
+ it('checks if my unicorn is alive', () => {
+  pet.fitness = 1;
+  pet.hunger = 9;
+  pet.age = 21;
+  expect(pet.isAlive()).toEqual(true);
+ });
+ it('checks if my unicorn is dead', () => {
+  pet.fitness = 0;
+  pet.hunger = 10;
+  pet.age = 30;
+  expect(pet.isAlive()).toEqual(false);
+ });
+ it('checks if my unicorn is still dead', () => {
+  pet.fitness = 1;
+  pet.hunger = 6;
+  pet.age = 35;
+  expect(pet.isAlive()).toEqual(false);
+ });
+})
