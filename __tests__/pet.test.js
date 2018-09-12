@@ -72,18 +72,27 @@ describe('isAlive', () => {
   pet.fitness = 1;
   pet.hunger = 9;
   pet.age = 21;
-  expect(pet.isAlive()).toEqual(true);
+  expect(pet.isAlive).toEqual(true);
  });
  it('checks if my unicorn is dead', () => {
   pet.fitness = 0;
-  pet.hunger = 10;
-  pet.age = 30;
-  expect(pet.isAlive()).toEqual(false);
+  pet.hunger = 11;
+  pet.age = 31;
+  expect(pet.isAlive).toEqual(false);
  });
- it('checks if my unicorn is still dead', () => {
-  pet.fitness = 1;
-  pet.hunger = 6;
-  pet.age = 35;
-  expect(pet.isAlive()).toEqual(false);
+});
+
+describe('throwError', () => {
+ it('throws error if pet is dead on grow up', () => {
+  expect(pet.growUp).toThrow('Your pet is no longer alive :(');
+ });
+ it('throws error if pet is dead on feed', () => {
+  expect(pet.feed).toThrow('Your pet is no longer alive :(');
+ });
+ it('throws error if pet is dead on walk', () => {
+  expect(pet.walk).toThrow('Your pet is no longer alive :(');
+ });
+ it('throws error if pet is dead on check up', () => {
+  expect(pet.checkUp).toThrow('Your pet is no longer alive :(');
  });
 })
